@@ -1,0 +1,272 @@
+*,body, ::before, ::after{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  border: 0px solid black;
+}
+
+:root{
+  --column-gap-1: 15px;
+  --background-color: rgba(250,240,220);
+  --background-height: 2450px;
+  --black: rgba(70,70,70);
+  --orange: rgba(250,200,50);
+}
+
+body{
+  background-color: var(--background-color);
+  min-width: 500px;
+  position: relative;
+  bottom: -20px;
+  min-height: var(--background-height);
+  font-family: sans-serif;
+  color: var(--black);
+}
+
+body:not(header){
+  line-height: 25px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  width: 100%;
+  background-color: var(--background-color);
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  height: 100px;
+  font-family: Papyrus;
+}
+
+#our-team{
+  display: flex;
+  align-items: center;
+}
+
+#header-img{
+  width:80px;
+  height: 80px;
+  padding: 5px;
+}
+
+#main-header {
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+  position: relative;
+}
+
+ul{
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  text-align: center;
+}
+
+
+nav li{
+  padding: 5px;
+  margin: 0 5px;
+  text-align: center;
+  height: 30px;
+  min-width: 80px;
+}
+
+nav li:hover{
+  color: var(--background-color);
+  background-color: var(--black); 
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.short-form{
+  display: none;
+}
+
+main {
+  background-color: none,rgba(100,200,240);
+  margin: 0 auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px 0px;
+  max-width: 1000px;
+  height: 100%;
+}
+
+main section{
+  margin: 0 auto 0px;
+  width: 90%;
+}
+
+#features{
+  padding: 150px 0 0;
+  display: grid;  
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 100px;
+}
+
+.three-fr-grid{
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+}
+
+iframe{
+  grid-column: 1/3;
+  width:100%;
+  aspect-ratio:1920/1080;
+}
+
+#description{
+  display: inline-block;
+  padding: 0 10px;
+  text-align: justify;
+  overflow-wrap: break-word;
+}
+
+@media(max-width: 800px){
+  .short-form{
+    display: inline-block;
+  }
+  .full-form{
+    display: none;
+  }
+}
+
+@media(max-width: 860px){
+  iframe{
+  grid-column: 1/4;
+  width:100%;
+  }
+  #description{
+  grid-column: 1/4;
+  display: inline-block;
+  padding: 10px;
+  }
+  body{
+    min-height: calc(var(--background-height) + 400px);
+  }
+  #main-header {
+  position: absolute;
+  top: 32px ;
+  left: 130px;
+  }
+  #description{
+    padding: 30px 0 0;
+  }
+}
+
+@media(max-width: 740px){
+    .nav-link:last-of-type{
+    display: none;
+  }
+}
+
+#intro-with-video{
+  column-gap: var(--column-gap-1);
+}
+
+#three-common-breakfast{
+  text-align: center;
+  column-gap: var(--column-gap-1);
+}
+
+.common-breakfast{
+  border: 1px solid var(--black);
+}
+
+.common-breakfast p{
+  padding: 10px 10px 15px;
+
+}
+
+.common-breakfast h3{
+  padding: 20px 10px 10px;
+  background-color: var(--orange);
+}
+
+#how{
+  padding: 120px 0 0;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  row-gap: 60px;
+  column-gap: 20px;
+}
+
+#how div:not(#form){
+  grid-column: 2/3;
+}
+
+#how i{
+  grid-column: 1/2;
+}
+
+#service{
+  font-size: 1.3em;
+  margin: 100px 0 100px;
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 100px 25px 100px;
+  line-height: 30px;
+  font-family: Gill Sans;
+}
+
+#link-form{
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: var(--orange);
+  color:  rgba(255,250,250);
+  width: 350px ;
+  height: 50px;
+  padding: 10px 0 0 0;
+}
+
+#contact{
+  padding: 120px 0 40px;
+}
+
+form{
+  display: grid;
+  grid-template-columns: 1fr 1fr 100px;
+  width: 100%;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+#email{
+  grid-column: 1/3;
+  padding: 5px;
+}
+
+#submit{
+  grid-column: 3/4;
+  padding: 5px;
+  cursor: pointer;
+}
+
+textarea{
+  grid-column: 1/-1;
+  height: 100px;
+  padding: 5px;
+}
+
+footer{
+  width: 100%;
+  position: absolute;
+  bottom:0px;
+  text-align: center;
+  background-color: var(--orange);
+  padding: 20px 0 20px;
+}
+
+.developer{
+  font-weight: bold;
+}
